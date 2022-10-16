@@ -16,6 +16,7 @@ def filter(data,dict_list):
     return filtered_data
 
 data = pd.read_excel(sys.argv[1]) #import our data
+data.dropna(inplace=True)
 sheet_dict = pd.read_excel(sys.argv[2], sheet_name=None, names=['column_name', 'filter']) #import our filters
 dict_list = [] #create an empty list for the dictionaries
 
