@@ -5,9 +5,13 @@ import time
 # mutual values are stored in a excel sheet marked as mutual and the non-mutual values of the 2dfs are stored in 2 separate sheets
 timestr = time.strftime("%Y%m%d") #stores current date(year,month,day) as a str
 #input data
-df1 = pd.read_excel(sys.argv[1])
-df1.fillna(value=0, inplace=True)
+df1 = pd.read_excel(sys.argv[1],  parse_dates=['DOB','DOA'])
 df2 = pd.read_excel(sys.argv[2])
+# clean up NaN values
+df1.dropna(how='all', inplace=True) # drop the rows where in all columns of the df the values are NaN, so keep rows that NaN are only in some columns
+df2.dropna(how='all', inplace=True)
+
+df1.fillna(value=0, inplace=True)
 df2.fillna(value=0, inplace=True)
 
 initial_df1 = df1['HiX#'].size
