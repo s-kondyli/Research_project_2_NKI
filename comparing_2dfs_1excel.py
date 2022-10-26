@@ -1,5 +1,5 @@
 # this script compares 2 dfs from different sheets of the same excel workbook
-# inputs in the command line: the excel_workbook, sheetname1, sheetname2 
+# inputs-arguments in the command line needed: the excel_workbook, sheetname1, sheetname2 
 # output in the cwd(current working directory): an excel workbook with 3 sheets: 1 for mutual_values and 2more with the unique values in each df 
 
 import pandas as pd
