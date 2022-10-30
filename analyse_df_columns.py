@@ -57,3 +57,7 @@ frames_dict = dict(zip(columns, df_list))
 with pd.ExcelWriter(sheetname +'_column_analysis'+ timestr +'_.xlsx') as writer:
     for sheet, frame in frames_dict.items():
         frame.to_excel(writer, sheet_name=sheet, index=False)
+  
+#give feedback to the user that all went right
+print('All done!')
+
