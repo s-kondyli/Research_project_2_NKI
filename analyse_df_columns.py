@@ -31,6 +31,9 @@ while True:
 
 #assign the desired df of the workbook based on the given sheetname to a data variable
 data = sheet_dict.get(sheetname)
+# Clean up data
+data.dropna(how='all', inplace=True) # drop the rows where in all columns of the df the values are NaN, so keep rows that NaN are only in some columns
+data.fillna(value=0, inplace=True)
 # input the columns to be analysed and catch for errors if the user gave columns not present in the dataframe
 while True:
     columns = list(map(str, input("Enter column names separated by comma:").split(','))) #creates a list of the columns that the user gave
