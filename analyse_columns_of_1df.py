@@ -1,4 +1,5 @@
-# this scripts analyzes mupliple columns of a given dataframe of an excel workbook and reports the results in an excel workbook where each sheet corresponds to concerns a certain column
+# this scripts analyzes mupliple columns of a given dataframe of an excel workbook and reports the results in an excel workbook 
+# where each sheet corresponds to concerns a certain column
 # input: the excel workbook, the sheetname of the df to be analysed and the desired columns to be analyzed
 import pandas as pd
 import time
