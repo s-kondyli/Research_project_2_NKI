@@ -52,6 +52,8 @@ df_list = [] # create an empty list to put our new dfs
 # for each column of the original dataframe count the number of unique values and store the results in a new dataframe and that in a list of dfs
 for column in columns:
     df = data[column].value_counts().to_frame().reset_index()
+    df.rename(columns={'index':column, column:'Number'}, inplace=True) # renaming the columns to be clear in the outputfile
+    df = df.assign(Percentage=lambda x: ((x['Number'] / df['Number'].sum() * 100)).__round__(1)) #creating a third column to calculate the percentage of each observation rounded for 1 decimal digit  
     df_list.append(df)
 
 # create a dictionary with the list of columns as keys and the list of dataframes as values
